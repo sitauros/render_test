@@ -91,6 +91,26 @@ let notes = [
     }
   })
 
+  app.put('/api/notes/:id', (request, response) => {
+    const body = request.body
+
+    if(!body.content) {
+      response.status(400).json({
+        error: "content missing"
+      })
+    }
+    else {
+      const note = {
+        id: body.id,
+        content: body.content,
+        important: body.important
+      }
+
+      notes = notes[request.params.id - 1] = note
+      response.json(note)
+    }
+  })
+
   const unknownEndpoint = (request, response) => {
     response.status(404).send({ error: 'unknown endpoint' })
   }
