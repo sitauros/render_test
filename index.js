@@ -115,3 +115,6 @@ let notes = [
     response.status(404).send({ error: 'unknown endpoint' })
   }
   app.use(unknownEndpoint)
+  
+  var env = process.env.NODE_ENV || 'development';
+  console.log(env)
