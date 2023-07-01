@@ -106,7 +106,7 @@ let notes = [
         important: body.important
       }
 
-      notes = notes[request.params.id - 1] = note
+	  notes[request.params.id - 1] = note
       response.json(note)
     }
   })
