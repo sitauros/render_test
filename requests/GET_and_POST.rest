@@ -1,19 +1,20 @@
-GET http://localhost:3001/api/notes/
+GET http://localhost:3001/api/persons
 
 ###
-POST http://localhost:3001/api/notes/ HTTP/1.1
+POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
 
 {
-    "content": "Testing GET + POST with VS Code REST client",
-    "important": false
+    "name": "Anna",
+    "number": "01-234567"
 }
 
 ###
-PUT http://localhost:3001/api/notes/64c54c77139c034f9684eb63
+PUT http://localhost:3001/api/persons/64c3060ac42fbc7a5fb91b3c
 content-type: application/json
 
 {
-    "content": "Amazing content",
-    "important": true
+    "name": "Ada Lovelace",
+    "number": "534-1239323",
+    "id": "64c3060ac42fbc7a5fb91b3c"
 }
